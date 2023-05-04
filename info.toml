@@ -218,6 +218,24 @@ path = "exercises/quizs/quizs1.cairo"
 mode = "test"
 hint = """No hints this time ;)"""
 
+# LOOPS
+
+[[exercises]]
+name = "loops1"
+path = "exercises/loops/loops1.cairo"
+mode = "test"
+hint = """
+The `break` condition is reached too early. Can you introduce a condition so that the loop runs a little more?"""
+
+[[exercises]]
+name = "loops2"
+path = "exercises/loops/loops2.cairo"
+mode = "test"
+hint = """
+You can return values from loops by adding the value you want returned after the `break` expression you use to stop the loop. Don't forget that assigning a variable to the value returned from a `loop` is an expression, and thus must end with a semicolomn.
+"""
+
+
 # ENUMS
 
 [[exercises]]
@@ -396,7 +414,7 @@ There's a few ways to fix this, try them all if you want:
    first `print`
 3. Make `fill_arr` borrow an immutable view of its argument instead of taking ownership by using the snapshot operator `@`,
    and then copy the data within the function in order to return an owned
-   `Array<felt>`. This requires an explicit clone of the array and should generally be avoided in Cairo, as the memory is write-once and cloning can be expensive."""
+   `Array<felt>`. This requires an explicit clone of the array and should generally be avoided in Cairo, as the memory is write-once and cloning can be expensive. To clone an object, you will need to import the trait `clone::Clone` and the implementation of the Clone trait for the array located in `array::ArrayTCloneImpl`"""
 
 [[exercises]]
 name = "move_semantics3"
